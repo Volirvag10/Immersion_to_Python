@@ -1,10 +1,13 @@
-# 1. Дан список повторяющихся элементов. Вернуть список с дублирующимися элементами.
-# В результирующем списке не должно быть дубликатов.
+# 1. Напишите функцию для транспонирования матрицы.
 
-my_list = [1, 2, 3, 4, 5, 1, 5, 7, 7, 8, 9, 10, 3, 4, 11, 7]
-my_set = set()
-for i in my_list:
-  if my_list.count(i) > 1:
-    my_set.add(i)
+def transpose(matrix):
+  transpose_matrix = []
+  zipped_rows = zip(*matrix)
+  transpose_matrix = [list(row) for row in zipped_rows]
+  return transpose_matrix
 
-print(my_set)
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matrix)
+matrix_1 = transpose(matrix)
+print(matrix_1)
